@@ -187,6 +187,8 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 " Hide files in NerdTree
 let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+" Quit VIM if NerdTree is the only thing left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " GitGutter config
 let g:gitgutter_sign_column_always=1
