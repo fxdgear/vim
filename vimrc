@@ -25,9 +25,19 @@ let g:go_disable_autoinstall = 0
 
 autocmd BufWritePre * :%s/\s\+$//e
 set hlsearch
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+"nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <leader>/ :nohlsearch <cr>
 nnoremap <Leader><Leader> :e#<CR>
 set showmatch
+
+" Syntastic Settings
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+
+" Pylint
+let g:syntastic_python_pylint_args = '--rcfile=~/.config/pylintrc'
+
 
 "CtrlP Config
 set runtimepath^=~/.vim/bundle/ctrlp.vim
