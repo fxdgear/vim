@@ -196,7 +196,7 @@ nmap <leader>j :NERDTreeFind<CR>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 " Hide files in NerdTree
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.pyc$']
 " Quit VIM if NerdTree is the only thing left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
